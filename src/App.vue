@@ -40,9 +40,6 @@ export default {
   name: 'App', 
 
 
-
-
-
   // [동적 변환 컴포넌트 페이지 : 기본 표시 부분]
   components: { 
 
