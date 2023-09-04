@@ -11,7 +11,8 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import routers from './routers/index.js'
 import globals from './commonGlobal/global.js' // [global]
-
+import stores from './commonStore/store.js' // [store]
+import mitts from 'mitt' // [mitt]
 
 // [앱 생성 실시]
 const app = createApp(App);
@@ -19,7 +20,10 @@ const app = createApp(App);
 // [앱 글로벌 변수 선언 실시]
 app.config.globalProperties.$name = "Vue3"; // [name / 이름]
 app.config.globalProperties.$age = 25; // [age / 나이]
-
+app.config.globalProperties.$store = stores; // [store / 저장소]
+// [mitt / 이벤트 버스]
+const emitter = mitts();
+app.config.globalProperties.$emitter = emitter; 
 
 // [라우터 사용 설정]
 app.use(routers);
@@ -27,6 +31,12 @@ app.use(routers);
 
 // [글로벌 사용 설정]
 app.use(globals);
+
+// [스토어 사용 설정]
+app.use(stores);
+
+// [mitt 이벤트 버스 사용 설정]
+app.use(mitts);
 
 
 // [app 아이디 : 렌더링 시작점] 

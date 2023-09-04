@@ -39,7 +39,6 @@
 
 <!-- [개별 스크립트 설정 실시] -->
 <script>
-
 export default {
   name: 'MainComponent',
 
@@ -64,12 +63,28 @@ export default {
     console.log("설 명 : 데이터 초기화 준비");
     console.log("글로벌 변수 [이름] : " + this.$name);
     console.log("글로벌 변수 [나이] : " + this.$age);
+    console.log("이름 : " + this.$store.state.name);
+    console.log("get 정보 : " + this.$store.getters.getUserInfo);
+
+    //[로컬 스토리지 데이터 CRUD 실시]
+    this.$setLocalStorage("Name","VUE3");
+    console.log("로컬 스토리지 저장 : "+this.$getLocalStorage("Name"));
+    console.log("");
+
+
+    // [사용자 정보 set 지정 실시]
+    this.$store.commit("setUserInfo", "TWOK");
+
+    console.log("");
+    console.log("[MainComponent] : [data] : [update]");
+    console.log("get 정보 : " + this.$store.getters.getUserInfo);
     console.log("");
 
     return {
       data: "MAIN", // [데이터 정의],
-      sum: this.$getSum(10,20)
-    }    
+      sum: this.$getSum(10,20),
+    }  
+      
   },
 
 

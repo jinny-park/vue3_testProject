@@ -2,6 +2,7 @@
 
 ### VUE.js 3.x version
 ### router 4.x version 
+### vuex 4.x version
 
 2023/8/30 ~ 2023/8/31
 [Vue3 기본 컴포넌트 구조 실습]
