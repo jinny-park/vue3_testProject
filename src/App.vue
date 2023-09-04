@@ -30,7 +30,6 @@
 // [Component 지정]
 import HeaderLayout from './commonLayout/HeaderLayout.vue'
 import FooterLayout from './commonLayout/FooterLayout.vue'
-
 import HomeComponent from './components/HomeComponent.vue'
 
 
@@ -49,21 +48,13 @@ export default {
   },
 
 
-
-
-
   // [컴포넌트 생성 시 초기 데이터 설정 (리턴 값 지정)]
   data () {
     return {
       data: "APP VUE", // [데이터 지정]
-
       HomeComponent // [초기 로드 컴포넌트 지정]
     }    
   },
-
-
-
-
 
   // [생명 주기 : 라이프 사이클]
   beforeCreate() {
@@ -89,6 +80,9 @@ export default {
     console.log("[App] : [mounted] : [start]");
     console.log("설 명 : DOM 렌더링 완료");
     console.log("");
+    // [이벤트 버스 알림 받기 등록]
+    this.$emitter.on("eventMethod", this.eventMethod);
+    
   },
   beforeUpdate() {
     console.log("");
@@ -113,22 +107,27 @@ export default {
     console.log("[App] : [unmounted] : [start]");
     console.log("설 명 : 인스턴스 마운트 해제 완료");
     console.log("");
+     // [이벤트 버스 알림 받기 해제]
+    this.$emitter.off("eventMethod");
   },
-
-
 
 
 
   // [메소드 정의 실시]
   methods: {
+     // [실시간 이벤트 버스 알림 받기 함수 정의 실시]
+    eventMethod: function(name){
+      console.log("");
+      console.log("[App] : [eventMethod] : [start]");
+      console.log("name : " + name);
+      console.log("");
+      this.data = name;
+    }
   }
 
 }
 
 </script>
-
-
-
 
 
 <!-- [애플리케이션 공통 스타일 지정] -->

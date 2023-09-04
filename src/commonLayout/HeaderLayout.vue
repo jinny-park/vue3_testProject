@@ -28,6 +28,7 @@
   </div>
   -->
 
+
 <ul class="nav nav-pills nav-fill" id="pills-tab" role="tablist">
   <li class="nav-item" role="presentation">
     <router-link class="menu" to="/">
@@ -36,13 +37,35 @@
   </li>
   <li class="nav-item" role="presentation">
     <router-link class="menu" to="/main">
-    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Main</button>
+    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-main" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Main</button>
   </router-link>
   </li>
   <li class="nav-item" role="presentation">
     <router-link class="menu" to="/list">
-    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">List</button>
-  </router-link>  </li>
+    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-list" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">List</button>
+  </router-link>  
+  </li>
+  <li class="nav-item" role="presentation">
+    <router-link class="menu" to="/vuex">
+    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-list" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Vuex</button>
+  </router-link>  
+  </li>
+  <li class="nav-item" role="presentation">
+    <router-link class="menu" to="/localstorage">
+    <button class="nav-link" id="pills-contact-tab" data-bs-tsoggle="pill" data-bs-target="#pills-list" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">LocalStorage</button>
+    </router-link>  
+  </li>
+    <li class="nav-item" role="presentation">
+    <router-link class="menu" to="/emitter">
+    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-list" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Emitter</button>
+    </router-link>  
+  </li>
+  <li class="nav-item" role="presentation">
+    <router-link class="menu" to="/axios">
+    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-list" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Axios</button>
+    </router-link>  
+  </li>
+
 </ul>
 </template>
 

@@ -9,26 +9,28 @@
   </div>
 
   <hr>
-
-  <div>
-    <h1> global 함수 getSum : {{ sum }} </h1>
-  </div>
-
-  <hr>
+  
   <!-- [이미지 설정 실시] -->
   <div>
     <img src="../assets/logo.png">
   </div>
-
+  <hr>
+  <div>
+    <h5> 글로벌 변수[이름] : {{this.$name }} / 글로벌 변수[나이] {{this.$age}}</h5>
+  </div>
+  <hr>
+  <div>
+    <h5> global 함수 $getSum 호출 : {{ sum }} </h5>
+  </div>
   <hr>
 
   <!-- [a 태그 : 일반 네이버 링크 이동 수행] -->
-  <a href="https://www.naver.com" target="_blank">이벤트 정상 수행</a>
+  <a href="https://www.naver.com" class="btn btn-primary" target="_blank">이벤트 정상 수행</a>
 
   <hr>
 
   <!-- [a 태그 : click 이벤트 prevent 막기 및 testMain 으로 이벤트 핸들링] -->
-  <a href="https://www.naver.com" target="_blank" @click.prevent="testMain">testMain 메소드 호출</a>
+  <a href="https://www.naver.com" class="btn btn-primary" target="_blank" @click.prevent="testMain">testMain 메소드 호출</a>
 
 
 </template>
@@ -51,35 +53,12 @@ export default {
   props: {
     msg: String
   },
-
-
-
-
-
   // [컴포넌트 생성 시 초기 데이터 설정 (리턴 값 지정)]
   data () {
     console.log("");
     console.log("[MainComponent] : [data] : [start]");
     console.log("설 명 : 데이터 초기화 준비");
-    console.log("글로벌 변수 [이름] : " + this.$name);
-    console.log("글로벌 변수 [나이] : " + this.$age);
-    console.log("이름 : " + this.$store.state.name);
-    console.log("get 정보 : " + this.$store.getters.getUserInfo);
-
-    //[로컬 스토리지 데이터 CRUD 실시]
-    this.$setLocalStorage("Name","VUE3");
-    console.log("로컬 스토리지 저장 : "+this.$getLocalStorage("Name"));
-    console.log("");
-
-
-    // [사용자 정보 set 지정 실시]
-    this.$store.commit("setUserInfo", "TWOK");
-
-    console.log("");
-    console.log("[MainComponent] : [data] : [update]");
-    console.log("get 정보 : " + this.$store.getters.getUserInfo);
-    console.log("");
-
+  
     return {
       data: "MAIN", // [데이터 정의],
       sum: this.$getSum(10,20),
@@ -150,6 +129,7 @@ export default {
 
     // [testMain 함수 정의 실시]
     testMain: function(){
+      alert("Click.prevent 이벤트 실행");
       console.log("");
       console.log("[MainComponent] : [testMain] : [start]");
       console.log("");

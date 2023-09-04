@@ -30,6 +30,26 @@ const routes = [
     path: "/main", // [경로]
     name: "main", // [이름]
     component: () => import('@/components/MainComponent.vue') // [로드 파일]]
+  },
+  {
+    path: "/vuex", // [경로]
+    name: "vuex", // [이름]
+    component: () => import('@/components/VuexComponent.vue') // [로드 파일]]
+  },
+  {
+    path: "/localStorage", // [경로]
+    name: "localStorage", // [이름]
+    component: () => import('@/components/LocalStorageComponent.vue') // [로드 파일]]
+  },
+  {
+    path: "/emitter", // [경로]
+    name: "emitter", // [이름]
+    component: () => import('@/components/EmitterComponent.vue') // [로드 파일]]
+  },
+  {
+    path: "/axios", // [경로]
+    name: "axios", // [이름]
+    component: () => import('@/components/AxiosComponent.vue') // [로드 파일]]
   }
 ];
 

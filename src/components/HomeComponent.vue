@@ -18,27 +18,15 @@
      <!-- [input : 실시간 입력한 값을 data 데이터 바인딩 변수와 공유] -->
     <input type="text" :value="data" @input="data = $event.target.value"/>
   </div>
-  <hr>
-  <div>
-    <!-- [버튼 클릭 이벤트 메소드 지정] -->
-    <button @click="testHome(), testSub('sub')">이벤트 함수 호출</button>
-  </div>
 
+  <hr>
+
+  <div >
+    <!-- [버튼 클릭 이벤트 메소드 지정] -->
+    <button  class="btn btn-primary" aria-expanded="false" @click="testHome(), testSub('sub')"> Event Button </button>
+  </div>
   <hr>
   
-    <!-- [부트스트랩 컴포넌트 사용] -->
-  <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    Dropdown button
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
-  </ul>
-  </div> 
-
-
 </template>
 
 
@@ -52,6 +40,7 @@ export default {
 
   // [컴포넌트 생성 시 초기 데이터 설정 (리턴 값 지정)]
   data () {
+
     console.log("");
     console.log("[HomeComponent] : [data] : [start]");
     console.log("설 명 : 데이터 초기화 준비");
@@ -61,9 +50,6 @@ export default {
       data: "HOME" // [데이터 정의]
     }    
   },
-
-
-
 
 
   // [생명 주기 : 라이프 사이클]
@@ -90,27 +76,6 @@ export default {
     console.log("[HomeComponent] : [mounted] : [start]");
     console.log("설 명 : DOM 렌더링 완료");
     console.log("");
-
-   // [axios http 요청 수행 실시]
-    this.$axios.get("http://jsonplaceholder.typicode.com/posts")
-      .then(res => {
-        console.log("");
-        console.log("[MainComponent] : [axios] : [response]");
-        console.log("응답 데이터 : " + JSON.stringify(res.data));
-        console.log("");        
-      })
-      .catch(error => {
-        console.log("");
-        console.log("[MainComponent] : [axios] : [error]");
-        console.log("에러 데이터 : " + error.data);
-        console.log(""); 
-      })
-      .finally(() => {
-        console.log("");
-        console.log("[MainComponent] : [axios] : [complete]");
-        console.log(""); 
-      })
-
   },
   beforeUpdate() {
     console.log("");
