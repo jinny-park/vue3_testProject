@@ -5,6 +5,7 @@
 ### vuex 4.x version
 ### mitt 3.x version
 ### axios 1.x version
+### bootstrap 5.x version
 
 2023/8/30 ~ 2023/8/31
 [Vue3 기본 컴포넌트 구조 실습]
