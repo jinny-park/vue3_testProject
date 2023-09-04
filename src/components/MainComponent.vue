@@ -10,12 +10,26 @@
 
   <hr>
 
+  <div>
+    <h1> global 함수 getSum : {{ sum }} </h1>
+  </div>
+
+  <hr>
   <!-- [이미지 설정 실시] -->
   <div>
     <img src="../assets/logo.png">
   </div>
 
   <hr>
+
+  <!-- [a 태그 : 일반 네이버 링크 이동 수행] -->
+  <a href="https://www.naver.com" target="_blank">이벤트 정상 수행</a>
+
+  <hr>
+
+  <!-- [a 태그 : click 이벤트 prevent 막기 및 testMain 으로 이벤트 핸들링] -->
+  <a href="https://www.naver.com" target="_blank" @click.prevent="testMain">testMain 메소드 호출</a>
+
 
 </template>
 
@@ -48,10 +62,13 @@ export default {
     console.log("");
     console.log("[MainComponent] : [data] : [start]");
     console.log("설 명 : 데이터 초기화 준비");
+    console.log("글로벌 변수 [이름] : " + this.$name);
+    console.log("글로벌 변수 [나이] : " + this.$age);
     console.log("");
 
     return {
-      data: "MAIN" // [데이터 정의]
+      data: "MAIN", // [데이터 정의],
+      sum: this.$getSum(10,20)
     }    
   },
 

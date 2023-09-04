@@ -10,20 +10,23 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import routers from './routers/index.js'
-
+import globals from './commonGlobal/global.js' // [global]
 
 
 // [앱 생성 실시]
 const app = createApp(App);
 
-
+// [앱 글로벌 변수 선언 실시]
+app.config.globalProperties.$name = "Vue3"; // [name / 이름]
+app.config.globalProperties.$age = 25; // [age / 나이]
 
 
 // [라우터 사용 설정]
 app.use(routers);
 
 
-
+// [글로벌 사용 설정]
+app.use(globals);
 
 
 // [app 아이디 : 렌더링 시작점] 
