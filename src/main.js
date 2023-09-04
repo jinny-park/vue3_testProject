@@ -13,6 +13,7 @@ import routers from './routers/index.js'
 import globals from './commonGlobal/global.js' // [global]
 import stores from './commonStore/store.js' // [store]
 import mitts from 'mitt' // [mitt]
+import axios from 'axios' // [axios]
 
 // [앱 생성 실시]
 const app = createApp(App);
@@ -24,6 +25,8 @@ app.config.globalProperties.$store = stores; // [store / 저장소]
 // [mitt / 이벤트 버스]
 const emitter = mitts();
 app.config.globalProperties.$emitter = emitter; 
+// [axios / http 통신]
+app.config.globalProperties.$axios = axios; 
 
 // [라우터 사용 설정]
 app.use(routers);

@@ -77,6 +77,27 @@ export default {
     console.log("[HomeComponent] : [mounted] : [start]");
     console.log("설 명 : DOM 렌더링 완료");
     console.log("");
+
+   // [axios http 요청 수행 실시]
+    this.$axios.get("http://jsonplaceholder.typicode.com/posts")
+      .then(res => {
+        console.log("");
+        console.log("[MainComponent] : [axios] : [response]");
+        console.log("응답 데이터 : " + JSON.stringify(res.data));
+        console.log("");        
+      })
+      .catch(error => {
+        console.log("");
+        console.log("[MainComponent] : [axios] : [error]");
+        console.log("에러 데이터 : " + error.data);
+        console.log(""); 
+      })
+      .finally(() => {
+        console.log("");
+        console.log("[MainComponent] : [axios] : [complete]");
+        console.log(""); 
+      })
+
   },
   beforeUpdate() {
     console.log("");
