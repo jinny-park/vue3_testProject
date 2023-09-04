@@ -9,5 +9,6 @@
 2023/9/4
 [vue3 라우터 구현]
 
-Test 예제 실습 화면
-![Alt text](image.png)
+Test 예제 실습 화면  
+![Alt text](image.png)  
+![Alt text](image-1.png)
