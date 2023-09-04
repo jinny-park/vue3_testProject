@@ -25,6 +25,19 @@
   </div>
 
   <hr>
+  
+    <!-- [부트스트랩 컴포넌트 사용] -->
+  <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+  </div> 
+
 
 </template>
 
@@ -154,4 +167,9 @@ export default {
 
 <!-- [개별 스타일 설정 실시] -->
 <style scoped>
+/* [부트스트랩 스타일 설정] */
+.dropdown {
+  width: 50%;
+  margin: 0 auto;
+}
 </style>

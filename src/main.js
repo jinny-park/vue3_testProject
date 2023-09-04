@@ -14,6 +14,9 @@ import globals from './commonGlobal/global.js' // [global]
 import stores from './commonStore/store.js' // [store]
 import mitts from 'mitt' // [mitt]
 import axios from 'axios' // [axios]
+import "bootstrap/dist/css/bootstrap.min.css" // [bootstrap]
+import "bootstrap" // [bootstrap]
+
 
 // [앱 생성 실시]
 const app = createApp(App);
