@@ -14,6 +14,16 @@
     <img src="../assets/logo.png">
   </div>
 
+  <div>
+     <!-- [input : 실시간 입력한 값을 data 데이터 바인딩 변수와 공유] -->
+    <input type="text" :value="data" @input="data = $event.target.value"/>
+  </div>
+  <hr>
+  <div>
+    <!-- [버튼 클릭 이벤트 메소드 지정] -->
+    <button @click="testHome(), testSub('sub')">이벤트 함수 호출</button>
+  </div>
+
   <hr>
 
 </template>
@@ -26,20 +36,6 @@
 <script>
 export default {
   name: 'HomeComponent',
-
-
-
-
-
-  // [부모에서 전달 받은 데이터 : 자식에서 동적 수정 불가능]
-  // [형태 : <HomeComponent msg="HomeComponent"/>]
-  props: {
-    msg: String
-  },
-
-
-
-
 
   // [컴포넌트 생성 시 초기 데이터 설정 (리턴 값 지정)]
   data () {
@@ -107,12 +103,27 @@ export default {
     console.log("");
   },
 
-
-
-
+// [지정한 data 및 component 값 속성이 변경 될 때 실행]
+  watch: {
+    data () {
+        console.log("[watch] : data : " + this.data)
+    }
+  },
 
   // [메소드 정의 실시]
   methods: {
+
+    testHome: function(){
+      alert(
+        "HomeComponent"
+      );
+    },
+    testSub: function(value){
+      console.log(value)
+    },
+    keyDownHandler: function(event){
+       console.log("[input] : event : " + event.key);
+    }
   }
 }
 </script>
