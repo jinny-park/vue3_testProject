@@ -14,10 +14,22 @@
     <img src="../assets/logo.png">
   </div>
   <hr>
-    <div>
-       d {{json}}
-  </div>
-  <hr>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">UserId</th>
+      <th scope="col">PostId</th>
+      <th scope="col">Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr v-for="(item, index) in json" :key="index">
+          <td>{{item.userId }}</td>
+          <td>{{ item.id}}</td>
+          <td>{{item.title}}</td>
+        </tr>
+  </tbody>
+</table>
 </template>
 
 
@@ -39,10 +51,6 @@ export default {
       json: this.json
     }
   },
-
-
-
-
 
   // [생명 주기 : 라이프 사이클]
   beforeCreate() {
@@ -76,7 +84,7 @@ export default {
         console.log("[AxiosComponent] : [axios] : [response]");
         console.log("응답 데이터 : " + JSON.stringify(res.data));
         console.log(""); 
-        this.json = JSON.stringify(res.data)   
+        this.json = res.data
       })
       .catch(error => {
         console.log("");
