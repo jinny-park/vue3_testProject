@@ -29,16 +29,74 @@
     <h5> global 함수 $getSum 호출 : {{ sum }} </h5>
   </div>
   <hr>
-
-  <!-- [a 태그 : 일반 네이버 링크 이동 수행] -->
+<div class="container">
+  <div class="row">
+    <div class="col">
+    <!-- [a 태그 : 일반 네이버 링크 이동 수행] -->
   <a href="https://www.naver.com" class="btn btn-primary" target="_blank">이벤트 정상 수행</a>
+    </div>
+    <div class="col">
+      <!-- [a 태그 : click 이벤트 prevent 막기 및 testMain 으로 이벤트 핸들링] -->
+  <a href="https://www.naver.com" class="btn btn-primary" target="_blank" @click.prevent="testMain">testMain 메소드 호출</a>
+    </div>
+  </div>
+</div>
+<hr>
+<!-- [v-model 사용해 체크 박스 체크된 값 확인 실시 : value] -->
+<div class="container">
+  <h4>체크박스</h4>
+<div class="row">
+ <div id='example-3' class="form-check col">
+  <label class="form-check-label" for="A">
+    A
+  </label>
+  <input class="form-check-input" type="checkbox" value="A" id="A" v-model="checkedNames">
+</div>
+ 
+<div class="form-check col">
+  <label class="form-check-label" for="B">
+    B
+  </label>
+  <input class="form-check-input" type="checkbox" value="B" id="B" checked v-model="checkedNames">
+</div>
+<div class="form-check col">
+  <label class="form-check-label" for="C">
+    C
+  </label>
+  <input class="form-check-input" type="checkbox" value="C" id="C" v-model="checkedNames">
+</div>
+<br>
+    <span>v-model 사용해서 체크 한 값 바인딩 : {{ checkedNames }}</span>
+  </div>
+</div>
 
   <hr>
-
-  <!-- [a 태그 : click 이벤트 prevent 막기 및 testMain 으로 이벤트 핸들링] -->
-  <a href="https://www.naver.com" class="btn btn-primary" target="_blank" @click.prevent="testMain">testMain 메소드 호출</a>
-
-
+    <!-- [v-model 사용해 라디오 버튼 선택 된 값 확인 실시 : value] -->
+<div class="container">
+  <h4>라디오</h4>
+  <div class="row">
+  <div class="form-check col">
+  <input class="form-check-input" type="radio" value="one" id="one" v-model="picked">
+  <label class="form-check-label" for="one">
+   one
+  </label>
+</div>
+<div class="form-check col">
+  <input class="form-check-input" type="radio" value="two" id="two" checked  v-model="picked">
+  <label class="form-check-label" for="two">
+    two
+  </label>
+</div>
+  <div class="form-check col">
+  <input class="form-check-input" type="radio" value="three" id="three" v-model="picked">
+  <label class="form-check-label" for="three">
+    three
+  </label>
+</div>
+<br>
+    <span>v-model 사용해서 체크 한 값 바인딩 : {{ picked }}</span>
+  </div>
+</div>
 </template>
 
 
@@ -68,6 +126,8 @@ export default {
     return {
       data: "MAIN", // [데이터 정의],
       sum: this.$getSum(10,20),
+      checkedNames : [] ,// [데이터 정의 : Array]
+      picked : ""
     }  
 
       

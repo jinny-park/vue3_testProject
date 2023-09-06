@@ -34,7 +34,7 @@
   <option value="three">Three</option>
 </select>
 <hr>
-  <span>선택된 option: {{ selected }}</span>
+  <span> v-model 사용 수행 실시 선택된 option: {{ selected }}</span>
 <hr>
   
 </template>
