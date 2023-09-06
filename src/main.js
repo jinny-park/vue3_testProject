@@ -27,7 +27,11 @@ app.config.globalProperties.$age = 25; // [age / 나이]
 app.config.globalProperties.$store = stores; // [store / 저장소]
 // [mitt / 이벤트 버스]
 const emitter = mitts();
-app.config.globalProperties.$emitter = emitter; 
+app.config.globalProperties.$emitter = emitter;
+// [mitt / 이벤트 버스 / index.html 사용 / window.mitt.on 함수 등록]
+window.mitt = window.mitt || mitts();
+
+
 // [axios / http 통신]
 app.config.globalProperties.$axios = axios; 
 
@@ -43,7 +47,6 @@ app.use(stores);
 
 // [mitt 이벤트 버스 사용 설정]
 app.use(mitts);
-
 
 // [app 아이디 : 렌더링 시작점] 
 app.mount('#app');

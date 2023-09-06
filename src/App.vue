@@ -82,7 +82,9 @@ export default {
     console.log("");
     // [이벤트 버스 알림 받기 등록]
     this.$emitter.on("eventMethod", this.eventMethod);
-    
+
+    // [이벤트 버스 알림 받기 등록]
+    window.mitt.on("setUser", this.setUser);
   },
   beforeUpdate() {
     console.log("");
@@ -109,6 +111,8 @@ export default {
     console.log("");
      // [이벤트 버스 알림 받기 해제]
     this.$emitter.off("eventMethod");
+     // [이벤트 버스 알림 받기 해제]
+    window.mitt.off("setUser");
   },
 
 
@@ -122,6 +126,14 @@ export default {
       console.log("name : " + name);
       console.log("");
       this.data = name;
+    },
+    // [실시간 이벤트 버스 알림 받기 함수 정의 실시]
+    setUser: function(info){
+      console.log("");
+      console.log("[App] : [setUser] : [start]");
+      console.log("info : " + info);
+      console.log("");
+      alert("Emitter사용해 html에서 vue로 이벤트 알림 전달한 userInfo "+info);
     }
   }
 

@@ -40,7 +40,7 @@ export default {
     console.log("");
 
      // [이벤트 버스 데이터 전달]
-    this.$emitter.emit("eventMethod", "emitterEvent");
+    this.$emitter.emit("eventMethod", "EmitterEvent");
     return {
       data: "Emitter"
     }
@@ -71,27 +71,6 @@ export default {
     console.log("[EmitterComponent] : [mounted] : [start]");
     console.log("설 명 : DOM 렌더링 완료");
     console.log("");
-
-   // [axios http 요청 수행 실시]
-    this.$axios.get("http://jsonplaceholder.typicode.com/posts")
-      .then(res => {
-        console.log("");
-        console.log("[EmitterComponent] : [axios] : [response]");
-        console.log("응답 데이터 : " + JSON.stringify(res.data));
-        console.log("");        
-      })
-      .catch(error => {
-        console.log("");
-        console.log("[EmitterComponent] : [axios] : [error]");
-        console.log("에러 데이터 : " + error.data);
-        console.log(""); 
-      })
-      .finally(() => {
-        console.log("");
-        console.log("[EmitterComponent] : [axios] : [complete]");
-        console.log(""); 
-      })
-
   },
   beforeUpdate() {
     console.log("");

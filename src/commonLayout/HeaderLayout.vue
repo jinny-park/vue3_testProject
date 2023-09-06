@@ -20,15 +20,6 @@
 
 <!-- [개별 템플릿 (뷰) 설정 실시] -->
 <template>
-<!--
- <div id="nav">
-    <router-link class="menu" to="/">Home</router-link>
-    <router-link class="menu" to="/main">Main</router-link>
-    <router-link class="menu" to="/list">List</router-link>
-  </div>
-  -->
-
-
 <ul class="nav nav-pills nav-fill" id="pills-tab" role="tablist">
   <li class="nav-item" role="presentation">
     <router-link class="menu" to="/">
@@ -51,11 +42,11 @@
   </router-link>  
   </li>
   <li class="nav-item" role="presentation">
-    <router-link class="menu" to="/localstorage">
-    <button class="nav-link" id="pills-contact-tab" data-bs-tsoggle="pill" data-bs-target="#pills-list" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">LocalStorage</button>
-    </router-link>  
+    <router-link class="menu" to="/localStorage">
+    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-list" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">localStorage</button>
+  </router-link>  
   </li>
-    <li class="nav-item" role="presentation">
+  <li class="nav-item" role="presentation">
     <router-link class="menu" to="/emitter">
     <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-list" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Emitter</button>
     </router-link>  
@@ -65,28 +56,15 @@
     <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-list" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Axios</button>
     </router-link>  
   </li>
-
 </ul>
 </template>
-
-
-
-
 
 <!-- [개별 스크립트 설정 실시] -->
 <script>
 export default {
     // [컴포넌트 생성 시 초기 데이터 설정 (리턴 값 지정)]
   data () {
-    return {
-      data: "리스트 데이터", // [데이터 정의]
-
-      array:[ // [데이터 정의]
-        "Home",
-        "Main",
-        "List"
-      ]
-    }    
+  
   }
 }
 </script>

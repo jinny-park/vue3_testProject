@@ -18,12 +18,12 @@
   </div>
 <hr>
 <div class="input-group mb-3">
-  <input @change="input" id="inputText" class="form-control" placeholder="새로운 값 입력하기" aria-label="Recipient's username" aria-describedby="button-addon2">
+  <input v-model="selected" @change="input" id="inputText" class="form-control" placeholder="새로운 값 입력하기" aria-label="Recipient's username" aria-describedby="button-addon2" >
   <button class="btn btn-primary" type="button" id="button-addon2" @click="setters()">Button</button>
 </div>
   <hr>
      <div>
-    <h5>default value = {{name}} </h5>
+    <h5> value = {{name}} </h5>
   </div>
   <hr>
   <hr>
@@ -108,6 +108,12 @@ export default {
     console.log("[VuexComponent] : [unmounted] : [start]");
     console.log("설 명 : 인스턴스 마운트 해제 완료");
     console.log("");
+  },
+// [지정한 data 및 component 값 속성이 변경 될 때 실행]
+  watch: {
+    data () {
+        console.log("[watch] : data : " + this.data)
+    }
   },
 
 

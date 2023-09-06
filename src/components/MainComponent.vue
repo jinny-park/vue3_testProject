@@ -17,6 +17,12 @@
   <hr>
   <div>
     <h5> 글로벌 변수[이름] : {{this.$name }} / 글로벌 변수[나이] {{this.$age}}</h5>
+    <p> 
+      참고 사항 : A 컴포넌트에서 전역 변수
+      변경 후 B 컴포넌트에서 호출 시 main.js
+      에서 설정한 초기값이 불러와진다
+      (공통 변수 사용 위해서는 스토리지에 저장 후 A , B 컴포넌트에서 사용)
+    </p>
   </div>
   <hr>
   <div>
@@ -58,11 +64,12 @@ export default {
     console.log("");
     console.log("[MainComponent] : [data] : [start]");
     console.log("설 명 : 데이터 초기화 준비");
-  
+    
     return {
       data: "MAIN", // [데이터 정의],
       sum: this.$getSum(10,20),
     }  
+
       
   },
 

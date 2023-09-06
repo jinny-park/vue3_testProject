@@ -14,3 +14,54 @@
 
   </body>
 </html>
+<script>
+  // [dom 생성 및 이벤트 상시 대기 실시] 
+  document.addEventListener("DOMContentLoaded", ready);
+    function ready(){
+      console.log("");
+      console.log("[index] : [window ready] : [start]");            
+      console.log("");
+    };
+
+
+
+
+
+    // [html 최초 로드 및 이벤트 상시 대기 실시] 
+    window.onload = function() {
+      console.log("");
+      console.log("[index] : [window onload] : [start]");
+      console.log(""); 
+
+      // [이벤트 버스 호출 실시]
+      setUser();
+    };
+
+
+
+
+
+    // [html 화면 사이즈 변경 이벤트 감지]
+    window.onresize = function() {
+      console.log("");
+      console.log("[index] : [window onresize] : [start]");
+      console.log(""); 
+    };
+
+
+
+
+    // [자바스크립트 브릿지 호출 실시]
+    function setUser() {
+      console.log("");
+      console.log("[index] : [setUser] : [start]");
+      console.log(""); 
+
+      // [vue 컴포넌트로 이벤트 알림 전달]
+      window.mitt.emit("setUser", "Vue3");
+    };
+
+
+  </script>
+
+</script>

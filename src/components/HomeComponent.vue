@@ -14,11 +14,11 @@
     <img src="../assets/logo.png">
   </div>
 
-  <div>
      <!-- [input : 실시간 입력한 값을 data 데이터 바인딩 변수와 공유] -->
-    <input type="text" :value="data" @input="data = $event.target.value"/>
+  <div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label">데이터 바인딩</label>
+    <input type="text" :value="data" @input="data = $event.target.value" class="form-control">
   </div>
-
   <hr>
 
   <div >
@@ -26,6 +26,16 @@
     <button  class="btn btn-primary" aria-expanded="false" @click="testHome(), testSub('sub')"> Event Button </button>
   </div>
   <hr>
+
+  <select  v-model="selected" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+  <option disabled value="">메뉴를 선택해 주세요</option>
+  <option value="one">One</option>
+  <option value="two">Two</option>
+  <option value="three">Three</option>
+</select>
+<hr>
+  <span>선택된 option: {{ selected }}</span>
+<hr>
   
 </template>
 
@@ -47,7 +57,8 @@ export default {
     console.log("");
 
     return {
-      data: "HOME" // [데이터 정의]
+      data: "HOME", // [데이터 정의]
+      selected: "선택사항 없음" // [데이터 지정]
     }    
   },
 
