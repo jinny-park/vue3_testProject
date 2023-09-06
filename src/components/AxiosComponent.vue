@@ -24,12 +24,13 @@
   </thead>
   <tbody>
     <tr v-for="(item, index) in json" :key="index">
-          <td>{{item.userId }}</td>
-          <td>{{ item.id}}</td>
+          <td @click="$router.push('/axios/detailpost')">{{item.userId }}</td>
+          <td @click="detailPost()">{{ item.id}}</td>
           <td>{{item.title}}</td>
         </tr>
   </tbody>
 </table>
+<DetailPostComponent msg=dfdf/>
 </template>
 
 
@@ -125,9 +126,14 @@ export default {
   },
 
 
+
+
   // [메소드 정의 실시]
   methods: {
-
+    detailPost:function(){
+      params = 
+       this.$router.push({name: 'detailpost', params: params});
+    }
   }
 }
 </script>

@@ -50,6 +50,12 @@ const routes = [
     path: "/axios", // [경로]
     name: "axios", // [이름]
     component: () => import('@/components/AxiosComponent.vue') // [로드 파일]]
+  },
+  {
+    path: "/axios/detailpost", // [경로]
+    name: "detailpost", // [이름]
+    props : true,
+    component: () => import('@/components/DetailPostComponent.vue') // [로드 파일]]
   }
 ];
 
