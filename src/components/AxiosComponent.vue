@@ -25,12 +25,11 @@
   <tbody>
     <tr v-for="(item, index) in json" :key="index">
           <td @click="$router.push('/axios/detailpost')">{{item.userId }}</td>
-          <td @click="detailPost()">{{ item.id}}</td>
+          <td @click="detailPost(item.body)">{{ item.id}}</td>
           <td>{{item.title}}</td>
         </tr>
   </tbody>
 </table>
-<DetailPostComponent msg=dfdf/>
 </template>
 
 
@@ -83,7 +82,7 @@ export default {
       .then(res => {
         console.log("");
         console.log("[AxiosComponent] : [axios] : [response]");
-        console.log("응답 데이터 : " + JSON.stringify(res.data));
+        //console.log("응답 데이터 : " + JSON.stringify(res.data));
         console.log(""); 
         this.json = res.data
       })
@@ -125,14 +124,11 @@ export default {
     console.log("");
   },
 
-
-
-
   // [메소드 정의 실시]
   methods: {
-    detailPost:function(){
-      params = 
-       this.$router.push({name: 'detailpost', params: params});
+    detailPost:function(body){
+      console.log(body);
+       this.$router.push({name: 'detailpost', params: {body: body }});
     }
   }
 }
