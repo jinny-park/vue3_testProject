@@ -15,13 +15,13 @@
   </div>
 <hr>
    <div>
-    <h1>Params</h1>
-
-    <h2>params로 받은 데이터</h2>
-    <h2>body: {{ $route.params.body }}</h2>
-  
-    <h2>props로 받은 데이터</h2>
-    <h2>name: {{ body }}</h2> 
+    <h3>Params</h3>
+<hr>
+    <h3>params로 받은 데이터</h3>
+    <p>body: {{ $route.params.body }}</p>
+   <hr>
+    <h3>props로 받은 데이터</h3>
+    <p>body: {{ body }}</p> 
   </div>
   <hr>
 
