@@ -56,6 +56,12 @@
     <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-list" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Axios</button>
     </router-link>  
   </li>
+
+  <li class="nav-item" role="presentation">
+    <router-link class="menu" to="/image">
+    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-list" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">ImageFile</button>
+    </router-link>  
+  </li>
 </ul>
 </template>
 

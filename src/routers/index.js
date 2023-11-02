@@ -56,6 +56,13 @@ const routes = [
     name: "detailpost", // [이름]
     props : true,
     component: () => import('@/components/DetailPostComponent.vue') // [로드 파일]]
+  },
+
+  {
+    path: "/image", // [경로]
+    name: "image", // [이름]
+    props : true,
+    component: () => import('@/components/ImageFileComponent.vue') // [로드 파일]]
   }
 ];
 
